@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Codeforces Problem Tags Remover",
+  "version": "0.1",
+  "description": "Removes problem tags on problemset page, individual problem pages on codeforces.com",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://codeforces.com/problemset/problem/*",
+        "*://codeforces.com/contest/*"
+      ],
+      "js": ["content.js"]
+    },
+    {
+      "matches": [
+        "*://codeforces.com/problemset",
+        "*://codeforces.com/problemset/page/*"
+      ],
+      "js": ["content_problemset.js"]
+    }
+  ]
+}
